@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TiendaApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1682baed6bf06e82a89ad0a0031db028585e00e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+380412f779ed74a96ed22aca997e54d8b0987540")]
 [assembly: System.Reflection.AssemblyProductAttribute("TiendaApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TiendaApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
