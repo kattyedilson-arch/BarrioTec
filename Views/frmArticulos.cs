@@ -17,49 +17,49 @@ namespace TiendaApp.Views {
         private int selectedId = 0;
 
         public frmArticulos() {
-            Text       = "Gestión de Artículos";
-            Size       = new Size(700, 500);
-            KeyPreview = true;
-            KeyDown   += (s, e) => { if (e.KeyCode == Keys.Escape) this.Close(); };
+    Text       = "Gestión de Artículos";
+    Size       = new Size(750, 500);
+    KeyPreview = true;
+    KeyDown   += (s, e) => { if (e.KeyCode == Keys.Escape) this.Close(); };
 
-            dgv.Dock          = DockStyle.Fill;
-            dgv.ReadOnly      = true;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.Anchor        = AnchorStyles.Top | AnchorStyles.Bottom
-                              | AnchorStyles.Left | AnchorStyles.Right;
+    dgv.Dock          = DockStyle.Fill;
+    dgv.ReadOnly      = true;
+    dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            txtNombre.PlaceholderText = "Nombre";
-            txtPrecio.PlaceholderText = "Precio";
-            txtStock .PlaceholderText = "Stock";
+    txtNombre.PlaceholderText = "Nombre";
+    txtPrecio.PlaceholderText = "Precio";
+    txtStock .PlaceholderText = "Stock";
 
-            txtNombre  .TabIndex = 0;
-            txtPrecio  .TabIndex = 1;
-            txtStock   .TabIndex = 2;
-            btnGuardar .TabIndex = 3;
-            btnEliminar.TabIndex = 4;
-            btnCerrar  .TabIndex = 5;
+    txtNombre  .TabIndex = 0;
+    txtPrecio  .TabIndex = 1;
+    txtStock   .TabIndex = 2;
+    btnGuardar .TabIndex = 3;
+    btnEliminar.TabIndex = 4;
+    btnCerrar  .TabIndex = 5;
 
-            dgv.SelectionChanged += dgv_SelectionChanged;
-            btnGuardar .Click    += btnGuardar_Click;
-            btnEliminar.Click    += btnEliminar_Click;
-            btnCerrar  .Click    += (s, e) => this.Close();
+    dgv.SelectionChanged += dgv_SelectionChanged;
+    btnGuardar .Click    += btnGuardar_Click;
+    btnEliminar.Click    += btnEliminar_Click;
+    btnCerrar  .Click    += (s, e) => this.Close();
 
-            var pnlTop = new Panel { Dock = DockStyle.Top, Height = 85 };
-            txtNombre  .Location = new Point(10,  10); txtNombre  .Size = new Size(160, 30);
-            txtPrecio  .Location = new Point(180, 10); txtPrecio  .Size = new Size(100, 30);
-            txtStock   .Location = new Point(290, 10); txtStock   .Size = new Size(80,  30);
-            btnGuardar .Location = new Point(10,  45); btnGuardar .Size = new Size(110, 30);
-            btnEliminar.Location = new Point(130, 45); btnEliminar.Size = new Size(110, 30);
-            btnCerrar  .Location = new Point(560, 45); btnCerrar  .Size = new Size(100, 30);
+    var pnlTop = new Panel { Dock = DockStyle.Top, Height = 90 };
 
-            pnlTop.Controls.AddRange(new Control[] {
-                txtNombre, txtPrecio, txtStock, btnGuardar, btnEliminar, btnCerrar
-            });
+    txtNombre  .Location = new Point(10,  10); txtNombre  .Size = new Size(180, 30);
+    txtPrecio  .Location = new Point(200, 10); txtPrecio  .Size = new Size(120, 30);
+    txtStock   .Location = new Point(330, 10); txtStock   .Size = new Size(80,  30);
+    btnGuardar .Location = new Point(10,  50); btnGuardar .Size = new Size(120, 30);
+    btnEliminar.Location = new Point(140, 50); btnEliminar.Size = new Size(120, 30);
+    btnCerrar  .Location = new Point(600, 50); btnCerrar  .Size = new Size(100, 30);
 
-            Controls.Add(dgv);
-            Controls.Add(pnlTop);
-            CargarDatos();
-        }
+    pnlTop.Controls.AddRange(new Control[] {
+        txtNombre, txtPrecio, txtStock,
+        btnGuardar, btnEliminar, btnCerrar
+    });
+
+    Controls.Add(dgv);
+    Controls.Add(pnlTop);
+    CargarDatos();
+}
 
         private void CargarDatos() {
             dgv.DataSource = ctrl.GetAll();

@@ -19,52 +19,44 @@ namespace TiendaApp.Views {
         private Button       btnCerrar         = new Button { Text = "✖ Cerrar" };
         private DataGridView dgvCarrito        = new DataGridView();
 
-        public frmNuevaVenta() {
-            Text       = "Nueva Venta";
-            Size       = new Size(700, 550);
-            KeyPreview = true;
-            KeyDown   += (s, e) => { if (e.KeyCode == Keys.Escape) this.Close(); };
+       public frmNuevaVenta() {
+    Text       = "Nueva Venta";
+    Size       = new Size(800, 550);
+    KeyPreview = true;
+    KeyDown   += (s, e) => { if (e.KeyCode == Keys.Escape) this.Close(); };
 
-            // Grid carrito
-            dgvCarrito.Dock          = DockStyle.Fill;
-            dgvCarrito.ReadOnly      = true;
-            dgvCarrito.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCarrito.Anchor        = AnchorStyles.Top | AnchorStyles.Bottom
-                                     | AnchorStyles.Left | AnchorStyles.Right;
+    dgvCarrito.Dock          = DockStyle.Fill;
+    dgvCarrito.ReadOnly      = true;
+    dgvCarrito.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // Labels
-            lblCliente.Text = "Sin cliente seleccionado";
-            lblTotal.Text   = "Total: Q0.00";
-            lblTotal.Font   = new Font("Arial", 12, FontStyle.Bold);
+    lblCliente.Text = "Sin cliente seleccionado";
+    lblTotal.Text   = "Total: Q0.00";
+    lblTotal.Font   = new Font("Arial", 12, FontStyle.Bold);
 
-            // Eventos
-            btnBuscarCliente .Click += btnBuscarCliente_Click;
-            btnBuscarArticulo.Click += btnBuscarArticulo_Click;
-            btnConfirmar     .Click += btnConfirmar_Click;
-            btnCerrar        .Click += (s, e) => this.Close();
+    btnBuscarCliente .Click += btnBuscarCliente_Click;
+    btnBuscarArticulo.Click += btnBuscarArticulo_Click;
+    btnConfirmar     .Click += btnConfirmar_Click;
+    btnCerrar        .Click += (s, e) => this.Close();
 
-            // Layout
-            var pnlTop = new Panel { Dock = DockStyle.Top, Height = 110 };
+    var pnlTop = new Panel { Dock = DockStyle.Top, Height = 100 };
 
-            lblCliente       .Location = new Point(10,  10); lblCliente       .Size = new Size(400, 25);
-            btnBuscarCliente .Location = new Point(10,  40); btnBuscarCliente .Size = new Size(160, 35);
-            btnBuscarArticulo.Location = new Point(180, 40); btnBuscarArticulo.Size = new Size(160, 35);
-            btnConfirmar     .Location = new Point(350, 40); btnConfirmar     .Size = new Size(150, 35);
-            btnCerrar        .Location = new Point(560, 40); btnCerrar        .Size = new Size(100, 35);
-            lblTotal         .Location = new Point(10,  80); lblTotal         .Size = new Size(300, 25);
+    lblCliente       .Location = new Point(10,  8);  lblCliente       .Size = new Size(500, 25);
+    btnBuscarCliente .Location = new Point(10,  40); btnBuscarCliente .Size = new Size(160, 35);
+    btnBuscarArticulo.Location = new Point(180, 40); btnBuscarArticulo.Size = new Size(160, 35);
+    btnConfirmar     .Location = new Point(350, 40); btnConfirmar     .Size = new Size(150, 35);
+    btnCerrar        .Location = new Point(660, 40); btnCerrar        .Size = new Size(100, 35);
+    lblTotal         .Location = new Point(10,  78); lblTotal         .Size = new Size(300, 25);
 
-            pnlTop.Controls.AddRange(new System.Windows.Forms.Control[] {
-                lblCliente, btnBuscarCliente, btnBuscarArticulo,
-                btnConfirmar, btnCerrar, lblTotal
-            });
+    pnlTop.Controls.AddRange(new System.Windows.Forms.Control[] {
+        lblCliente, btnBuscarCliente, btnBuscarArticulo,
+        btnConfirmar, btnCerrar, lblTotal
+    });
 
-            Controls.Add(dgvCarrito);
-            Controls.Add(pnlTop);
+    Controls.Add(dgvCarrito);
+    Controls.Add(pnlTop);
 
-            // Foco automático (requisito UX)
-            ActiveControl = btnBuscarCliente;
-        }
-
+    ActiveControl = btnBuscarCliente;
+}
         private void btnBuscarCliente_Click(object sender, EventArgs e) {
             using (var buscador = new frmBusquedaCliente()) {
                 if (buscador.ShowDialog() == DialogResult.OK && buscador.ClienteSeleccionado != null) {
