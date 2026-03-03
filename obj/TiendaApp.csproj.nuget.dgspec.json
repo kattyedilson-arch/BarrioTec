@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TiendaApp\\TiendaApp.csproj": {}
+    "D:\\BarrioTec\\TiendaApp.csproj": {}
   },
   "projects": {
-    "E:\\TiendaApp\\TiendaApp.csproj": {
+    "D:\\BarrioTec\\TiendaApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TiendaApp\\TiendaApp.csproj",
+        "projectUniqueName": "D:\\BarrioTec\\TiendaApp.csproj",
         "projectName": "TiendaApp",
-        "projectPath": "E:\\TiendaApp\\TiendaApp.csproj",
-        "packagesPath": "C:\\Users\\laboratorio a\\.nuget\\packages\\",
-        "outputPath": "E:\\TiendaApp\\obj\\",
+        "projectPath": "D:\\BarrioTec\\TiendaApp.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\BarrioTec\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\laboratorio a\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,11 +45,17 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.9.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,6 +67,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.13, 9.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.13, 9.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.13, 9.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.13, 9.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -69,7 +93,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
